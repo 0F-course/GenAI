@@ -74,7 +74,8 @@ def retrieve_from_DB():
             {'date': selected_date}
             )
     return result.fetchall()
-        
+
+
 load_dotenv()
 
 engine = create_sql_engine()
@@ -87,6 +88,10 @@ st.subheader('The cure for your _saudades_...')
 if 'active_tab' not in st.session_state:
     st.session_state.active_tab = 'Home'
 
+# Initialize session state to keep track of the messages
+if "messages" not in st.session_state.keys():
+    clear_chat_history()
+    
 # Two side-by-side buttons using columns
 col1, col2 = st.columns([1,6])
 with col1:
