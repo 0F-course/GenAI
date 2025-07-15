@@ -10,5 +10,8 @@ COPY . .
 # Instala dependencias del sistema necesarias para pandas y SQLite
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Expose default Streamlit port
+EXPOSE 8501
+
 # Comando para arrancar la API
-CMD ["python","streamlit","run","app.py"]
+CMD ["python", "-m", "streamlit", "run", "app.py"]

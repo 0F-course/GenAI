@@ -1,2 +1,5 @@
-pandas
-flask
+streamlit
+groq
+python-dotenv
+psycopg2-binary
+sqlalchemy
